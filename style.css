@@ -131,7 +131,7 @@ body {
   opacity: 1;
   transform: scaleY(1);
   pointer-events: auto;
-  padding-bottom: 1.5vw;
+  padding-bottom: 0.5vw;
 }
 
 .variant-panel.hidden {
@@ -152,13 +152,18 @@ body {
 }
 
 .option-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(6vw, 1fr));
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 1vw;
+  padding: 1vw;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-category) transparent;
 }
 
 .option-grid img {
-  width: 3vw;
+  flex: 0 0 auto;
+  width: 2.5vw;
   border-radius: 0.8vw;
   border: 0.2vw solid transparent;
   cursor: pointer;
@@ -173,6 +178,7 @@ body {
 .option-grid img.selected {
   border-color: var(--accent-category);
 }
+
 
 .buttons {
   display: flex;

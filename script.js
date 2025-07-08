@@ -18,6 +18,59 @@ function characterBuilder() {
       ],
       'Asset': [
         'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/1.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/2.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/3.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/4.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/5.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/6.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/7.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/8.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/9.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/10.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/11.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/12.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/13.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/14.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/15.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/16.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/17.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/18.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/19.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/20.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/21.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/22.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/23.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/24.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/25.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/26.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/27.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/28.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/29.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/30.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/31.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/32.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/33.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/34.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/35.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/36.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/37.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/38.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/39.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/40.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/41.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/42.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/43.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/44.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/45.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/46.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/47.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/48.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/49.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/50.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/51.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/52.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/53.png',
+        'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Asset/54.png',
       ],
       'Face': [
         'https://raw.githubusercontent.com/qasagava/Haties/refs/heads/main/assets/Face/1%20.png',
@@ -94,13 +147,22 @@ function characterBuilder() {
       });
 
       const useHair = Math.random() > 0.5;
-      if (useHair) {
-        this.selected['Hair'] = this.assets['Hair'][0];
-        this.selected['Asset'] = null;
-      } else {
-        this.selected['Asset'] = this.assets['Asset'][0];
-        this.selected['Hair'] = null;
-      }
+if (useHair) {
+  const hairOptions = this.assets['Hair'];
+  if (hairOptions?.length) {
+    const randomIndex = Math.floor(Math.random() * hairOptions.length);
+    this.selected['Hair'] = hairOptions[randomIndex];
+  }
+  this.selected['Asset'] = null;
+} else {
+  const assetOptions = this.assets['Asset'];
+  if (assetOptions?.length) {
+    const randomIndex = Math.floor(Math.random() * assetOptions.length);
+    this.selected['Asset'] = assetOptions[randomIndex];
+  }
+  this.selected['Hair'] = null;
+}
+
 
       anime({
         targets: '.preview img',

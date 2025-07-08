@@ -37,16 +37,24 @@
       </div>
 
       <!-- Выпадающее окно вариантов -->
-      <div class="variant-panel" x-show="activeCategory" x-transition>
-        <h2 x-text="activeCategory" class="panel-title"></h2>
-        <div class="option-grid">
-          <template x-for="(url, index) in assets[activeCategory]" :key="index">
-            <img :src="url"
-                 :class="{'selected': selected[activeCategory] === url}"
-                 @click="select(activeCategory, url)">
-          </template>
-        </div>
-      </div>
+<!-- Панель выбора вариантов -->
+<div
+  class="variant-panel"
+  :class="{ 'visible': isPanelVisible, 'hidden': !isPanelVisible }"
+  x-cloak
+>
+  <h2 x-text="activeCategory" class="panel-title"></h2>
+  <div class="option-grid">
+    <template x-for="(url, index) in assets[activeCategory]" :key="index">
+      <img :src="url"
+           :class="{'selected': selected[activeCategory] === url}"
+           @click="select(activeCategory, url)">
+    </template>
+  </div>
+</div>
+
+
+
 
       <!-- Кнопки действий -->
       <div class="buttons">

@@ -27,16 +27,16 @@ function characterBuilder() {
       ]
     },
 
-    // ✅ Hand — последний слой
     layerOrder: [
       'Background', 'Back asset', 'Base', 'Clothes', 'Face', 'Hair', 'Asset', 'Hand'
     ],
 
     selected: {},
     activeCategory: null,
+    isPanelVisible: false,
 
     init() {
-      this.randomize(); // 👉 при загрузке сразу генерация
+      this.randomize();
 
       anime({
         targets: '.preview',
@@ -47,9 +47,20 @@ function characterBuilder() {
       });
     },
 
-    toggleCategory(layer) {
-      this.activeCategory = this.activeCategory === layer ? null : layer;
-    },
+   toggleCategory(layer) {
+  if (this.activeCategory === layer) {
+    this.isPanelVisible = false;
+    setTimeout(() => {
+      this.activeCategory = null;
+    }, 1600); // должно совпадать с transition duration
+  } else {
+    this.activeCategory = layer;
+    this.$nextTick(() => {
+      this.isPanelVisible = true;
+    });
+  }
+},
+
 
     select(layer, url) {
       if (layer === 'Hair') this.selected['Asset'] = null;
@@ -74,7 +85,6 @@ function characterBuilder() {
     randomize() {
       const alwaysPick = ['Background', 'Back asset', 'Base', 'Clothes', 'Face', 'Hand'];
 
-      // Устанавливаем всегда 1 вариант из каждой обязательной категории
       alwaysPick.forEach(layer => {
         const options = this.assets[layer];
         if (options?.length) {
@@ -83,7 +93,6 @@ function characterBuilder() {
         }
       });
 
-      // Hair или Asset (одно из двух)
       const useHair = Math.random() > 0.5;
       if (useHair) {
         this.selected['Hair'] = this.assets['Hair'][0];

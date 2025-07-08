@@ -28,7 +28,18 @@ body {
   justify-content: center;
   gap: 2vw;
   animation: fadeIn 1s ease;
+  background-color: #F9FBEC;
+  padding-top: 5vw;
+  border-radius: 3vw;
+  padding-bottom: 7vw;
+
+  /* Мягкая тень как у Apple */
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 10px 20px rgba(0, 0, 0, 0.05);
 }
+
 
 /* Превью */
 .preview-wrapper {
@@ -96,15 +107,43 @@ body {
   transform: translateY(-0.2vw);
 }
 
-/* Панель выбора вариантов */
 .variant-panel {
   background: var(--panel);
   padding: 1.5vw;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  transition: background 0.3s ease;
   border: 1px solid #eee;
+  overflow: hidden;
+  transform-origin: top;
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.95);
+  transition:
+    max-height 1.6s ease,
+    opacity 1.6s ease,
+    transform 1.6s ease,
+    padding 1.6s ease;
+  pointer-events: none;
 }
+
+.variant-panel.visible {
+  max-height: 1000px;
+  opacity: 1;
+  transform: scaleY(1);
+  pointer-events: auto;
+  padding-bottom: 1.5vw;
+}
+
+.variant-panel.hidden {
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.95);
+  pointer-events: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
 
 .panel-title {
   margin-bottom: 1vw;
@@ -119,7 +158,7 @@ body {
 }
 
 .option-grid img {
-  width: 100%;
+  width: 3vw;
   border-radius: 0.8vw;
   border: 0.2vw solid transparent;
   cursor: pointer;
@@ -140,7 +179,9 @@ body {
   display: flex;
   gap: 1vw;
   flex-wrap: wrap;
-  margin-top: 1vw;
+  position: absolute;
+  left: 46vw;
+  top: 38.5vw;
 }
 
 .buttons button {

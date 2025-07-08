@@ -1,35 +1,131 @@
-* {
-  box-sizing: border-box;
+body {
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d0d0d;
+  color: white;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-body {
-  background: #0b0b0b;
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  height: 100vh;
+.layout {
   display: flex;
+  gap: 2rem;
   align-items: flex-start;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Превью */
+.preview-wrapper {
+  flex: 0 0 400px;
+  height: 400px;
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
-  padding-top: 5vw;
+  background: #1b1b1b;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
-.container {
+.preview img.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Правая панель */
+.controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Кнопки в 2 колонки */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.category-btn {
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
   text-align: center;
-  opacity: 0;
-  transform: translateY(3vw);
+  transition: background 0.2s ease;
 }
 
-.headline {
-  font-size: 5vw;
-  letter-spacing: 0.2vw;
-  opacity: 0;
-  margin-bottom: 2vw;
+.category-btn:hover {
+  background: #333;
 }
 
-.subtitle {
-  font-size: 1.5vw;
-  opacity: 0;
+/* Панель выбора вариантов */
+.variant-panel {
+  background: #1a1a1a;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
+
+.panel-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  color: #ff9800;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.75rem;
+}
+
+.option-grid img {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.option-grid img:hover {
+  transform: scale(1.05);
+}
+
+.option-grid img.selected {
+  border-color: #ff9800;
+}
+
+/* Кнопки действия */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.buttons button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buttons button:hover {
+  background: #e57c00;
+}
+
+.preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+

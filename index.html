@@ -2,18 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Character Builder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haties NFT</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
-<body>
+<body x-data="characterBuilder()" x-init="init()">
+  <div class="layout">
 
-  <div class="container">
-    <h1 class="headline">Haties NFT v1</h1>
-    <p class="subtitle">Digital Collection in Motion</p>
+    <!-- Превью -->
+    <div class="preview-wrapper">
+      <div class="preview" id="preview">
+        <template x-for="layer in layerOrder" :key="layer">
+          <img :src="selected[layer]" class="layer" :alt="layer" x-show="selected[layer]">
+        </template>
+      </div>
+    </div>
+    
+
+
+    <!-- Панель управления -->
+    <div class="controls-panel">
+
+      <!-- Кнопки категорий -->
+      <div class="category-grid">
+        <template x-for="layer in layerOrder" :key="layer">
+          <button class="category-btn" @click="toggleCategory(layer)">
+            <span x-text="layer"></span>
+          </button>
+        </template>
+      </div>
+
+      <!-- Выпадающее окно вариантов -->
+      <div class="variant-panel" x-show="activeCategory" x-transition>
+        <h2 x-text="activeCategory" class="panel-title"></h2>
+        <div class="option-grid">
+          <template x-for="(url, index) in assets[activeCategory]" :key="index">
+            <img :src="url"
+                 :class="{'selected': selected[activeCategory] === url}"
+                 @click="select(activeCategory, url)">
+          </template>
+        </div>
+      </div>
+
+      <!-- Кнопки действий -->
+      <div class="buttons">
+        <button @click="randomize()">🎲 Random</button>
+        <button @click="downloadImage()">💾 Save PNG</button>
+      </div>
+
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-</html> 
+</html>

@@ -129,3 +129,39 @@ function characterBuilder() {
     }
   };
 }
+
+
+function preloader() {
+    return {
+      isVisible: true,
+      init() {
+        const images = document.images;
+        let loaded = 0;
+        const total = images.length;
+
+        if (total === 0) {
+          this.isVisible = false;
+          return;
+        }
+
+        for (let i = 0; i < total; i++) {
+          if (images[i].complete) {
+            increment();
+          } else {
+            images[i].addEventListener('load', increment, false);
+            images[i].addEventListener('error', increment, false);
+          }
+        }
+
+        const that = this;
+        function increment() {
+          loaded++;
+          if (loaded === total) {
+            setTimeout(() => {
+              that.isVisible = false;
+            }, 500); // Задержка для красоты
+          }
+        }
+      }
+    };
+  }
